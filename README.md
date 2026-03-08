@@ -1,5 +1,7 @@
 # NEXUS-FORGE
 
+![NEXUS-FORGE Banner](./banner.png)
+
 NestJS CQRS starter kit designed as a clean base for command/query-driven services with event-oriented integrations.
 
 ## Included Foundations

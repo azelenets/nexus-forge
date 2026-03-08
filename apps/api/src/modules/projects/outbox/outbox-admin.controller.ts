@@ -8,7 +8,7 @@ import { OutboxEventEntity } from './outbox-event.entity';
 
 @ApiTags('outbox')
 @ApiBearerAuth()
-@Controller('outbox')
+@Controller({ path: 'outbox', version: '1' })
 @UseGuards(AuthGuard('jwt'), RolesGuard)
 @Roles('admin')
 export class OutboxAdminController {

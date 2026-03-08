@@ -10,7 +10,7 @@ import { RolesGuard } from '../../common/guards/roles.guard';
 
 @ApiTags('projects')
 @ApiBearerAuth()
-@Controller('projects')
+@Controller({ path: 'projects', version: '1' })
 @UseGuards(AuthGuard('jwt'), RolesGuard)
 export class ProjectsController {
   constructor(

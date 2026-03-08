@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <!-- Cyber grid pattern -->
+    <pattern id="cyberGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0,243,255,0.04)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Scanlines -->
+    <pattern id="scanlines" width="100%" height="4" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="2" fill="rgba(255,255,255,0)"/>
+      <rect y="2" width="100%" height="2" fill="rgba(0,0,0,0.18)"/>
+    </pattern>
+
+    <!-- Hazard stripe pattern -->
+    <pattern id="hazardStripe" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="20" fill="#facc15"/>
+      <rect x="10" width="10" height="20" fill="#000"/>
+    </pattern>
+
+    <!-- Primary stripe pattern -->
+    <pattern id="primaryStripe" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="20" fill="#00f3ff"/>
+      <rect x="10" width="10" height="20" fill="#000"/>
+    </pattern>
+
+    <!-- Radial glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="rgba(0,243,255,0.06)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+
+    <!-- Primary glow filter -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle glow for text -->
+    <filter id="textGlow" x="-5%" y="-20%" width="110%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip for badge -->
+    <clipPath id="slantClip">
+      <polygon points="10,0 100,0 90,28 0,28"/>
+    </clipPath>
+
+    <!-- Gradient for title -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="#050505"/>
+
+  <!-- Cyber grid -->
+  <rect width="1280" height="640" fill="url(#cyberGrid)"/>
+
+  <!-- Radial center glow -->
+  <rect width="1280" height="640" fill="url(#centerGlow)"/>
+
+  <!-- Right panel faint background -->
+  <rect x="780" y="0" width="500" height="640" fill="rgba(0,243,255,0.015)"/>
+
+  <!-- ==================== LEFT CONTENT AREA ==================== -->
+
+  <!-- Hazard stripe accent bar (top-left) -->
+  <rect x="60" y="60" width="56" height="12" fill="url(#hazardStripe)"/>
+
+  <!-- Tactical label -->
+  <text x="128" y="72" font-family="'Courier New', Courier, monospace" font-size="18" font-weight="700"
+        fill="#facc15" letter-spacing="5" text-decoration="none">NESTJS · CQRS · STARTER_KIT</text>
+
+  <!-- Main title: NEXUS -->
+  <text x="58" y="200" font-family="'Courier New', Courier, monospace" font-size="128" font-weight="900"
+        fill="url(#titleGrad)" letter-spacing="-4" filter="url(#textGlow)">NEXUS</text>
+
+  <!-- Main title: FORGE -->
+  <text x="58" y="320" font-family="'Courier New', Courier, monospace" font-size="128" font-weight="900"
+        fill="white" letter-spacing="-4" opacity="0.95">FORGE</text>
+
+  <!-- Subtitle / description -->
+  <!-- HUD border container for description -->
+  <!-- Top-left corner -->
+  <line x1="58" y1="348" x2="58" y2="366" stroke="#00f3ff" stroke-width="2"/>
+  <line x1="58" y1="348" x2="76" y2="348" stroke="#00f3ff" stroke-width="2"/>
+  <!-- Bottom-right corner -->
+  <line x1="700" y1="410" x2="700" y2="392" stroke="#00f3ff" stroke-width="2"/>
+  <line x1="700" y1="410" x2="682" y2="410" stroke="#00f3ff" stroke-width="2"/>
+  <!-- Border lines -->
+  <rect x="58" y="348" width="642" height="62" fill="rgba(255,255,255,0.03)" stroke="rgba(0,243,255,0.18)" stroke-width="1"/>
+
+  <!-- Left accent bar -->
+
+  <text x="76" y="374" font-family="'Courier New', Courier, monospace" font-size="16" fill="#94a3b8" letter-spacing="1">
+    Command/Query-driven NestJS monorepo with event-oriented
+  </text>
+  <text x="76" y="394" font-family="'Courier New', Courier, monospace" font-size="16" fill="#94a3b8" letter-spacing="1">
+    integrations, JWT auth, RBAC, and transactional outbox.
+  </text>
+
+  <!-- ==================== TECH STACK BADGES ==================== -->
+  <text x="58" y="456" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="700"
+        fill="#00f3ff" letter-spacing="4" opacity="0.6">TECH_STACK //</text>
+
+  <!-- NestJS badge -->
+  <rect x="58" y="466" width="90" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="103" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">NestJS</text>
+
+  <!-- CQRS badge -->
+  <rect x="156" y="466" width="64" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="188" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">CQRS</text>
+
+  <!-- PostgreSQL badge -->
+  <rect x="228" y="466" width="120" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="288" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">PostgreSQL</text>
+
+  <!-- Redis badge -->
+  <rect x="356" y="466" width="72" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="392" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">Redis</text>
+
+  <!-- NATS badge -->
+  <rect x="436" y="466" width="64" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="468" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">NATS</text>
+
+  <!-- BullMQ badge -->
+  <rect x="508" y="466" width="86" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="551" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">BullMQ</text>
+
+  <!-- TypeORM badge -->
+  <rect x="602" y="466" width="96" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="650" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">TypeORM</text>
+
+  <!-- Docker badge -->
+  <rect x="706" y="466" width="86" height="34" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+  <text x="749" y="488" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="700"
+        fill="#00f3ff" text-anchor="middle" letter-spacing="2">Docker</text>
+
+  <!-- ==================== BOTTOM STATUS BAR ==================== -->
+  <rect x="0" y="580" width="1280" height="60" fill="rgba(0,0,0,0.6)"/>
+  <rect x="0" y="580" width="1280" height="1" fill="rgba(0,243,255,0.2)"/>
+
+  <!-- Left status items -->
+  <text x="60" y="616" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700"
+        fill="#94a3b8" letter-spacing="2">STATUS:</text>
+  <text x="120" y="616" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700"
+        fill="#00f3ff" letter-spacing="2">OPERATIONAL</text>
+
+  <text x="260" y="616" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700"
+        fill="#94a3b8" letter-spacing="2">AUTH:</text>
+  <text x="305" y="616" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700"
+        fill="#00f3ff" letter-spacing="2">JWT + RBAC</text>
+
+  <text x="420" y="616" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700"
+        fill="#94a3b8" letter-spacing="2">OUTBOX:</text>
+  <text x="484" y="616" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700"
+        fill="#00f3ff" letter-spacing="2">TRANSACTIONAL</text>
+
+  <!-- Right status: version / build -->
+  <text x="1180" y="616" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700"
+        fill="#00f3ff" letter-spacing="2" text-anchor="end">BUILD_v1.0</text>
+
+  <!-- ==================== RIGHT PANEL ==================== -->
+
+  <!-- Vertical separator line -->
+  <line x1="800" y1="60" x2="800" y2="560" stroke="rgba(0,243,255,0.12)" stroke-width="1" stroke-dasharray="4,8"/>
+
+  <!-- Right panel header -->
+  <text x="828" y="100" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"
+        fill="#00f3ff" letter-spacing="5" opacity="0.5">ARCHITECTURE_MAP //</text>
+
+  <!-- Architecture items with HUD style -->
+  <!-- Item 1: COMMAND BUS -->
+  <rect x="828" y="116" width="390" height="1" fill="rgba(0,243,255,0.15)"/>
+  <rect x="828" y="117" width="4" height="54" fill="#00f3ff" opacity="0.7"/>
+  <rect x="828" y="117" width="390" height="54" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.12)" stroke-width="1"/>
+  <text x="844" y="137" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="700"
+        fill="#00f3ff" letter-spacing="3">COMMAND BUS</text>
+  <text x="844" y="156" font-family="'Courier New', Courier, monospace" font-size="10" fill="#64748b" letter-spacing="1">
+    CreateProject · CQRS aggregate dispatch
+  </text>
+
+  <!-- Item 2: QUERY BUS -->
+  <rect x="828" y="182" width="390" height="1" fill="rgba(0,243,255,0.15)"/>
+  <rect x="828" y="183" width="4" height="54" fill="#3b82f6" opacity="0.7"/>
+  <rect x="828" y="183" width="390" height="54" fill="rgba(59,130,246,0.04)" stroke="rgba(59,130,246,0.12)" stroke-width="1"/>
+  <text x="844" y="203" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="700"
+        fill="#3b82f6" letter-spacing="3">QUERY BUS</text>
+  <text x="844" y="222" font-family="'Courier New', Courier, monospace" font-size="10" fill="#64748b" letter-spacing="1">
+    GetProjectById · read-side projection
+  </text>
+
+  <!-- Item 3: EVENT STORE -->
+  <rect x="828" y="248" width="390" height="1" fill="rgba(250,204,21,0.2)"/>
+  <rect x="828" y="249" width="4" height="54" fill="#facc15" opacity="0.8"/>
+  <rect x="828" y="249" width="390" height="54" fill="rgba(250,204,21,0.04)" stroke="rgba(250,204,21,0.12)" stroke-width="1"/>
+  <text x="844" y="269" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="700"
+        fill="#facc15" letter-spacing="3">EVENT STORE</text>
+  <text x="844" y="288" font-family="'Courier New', Courier, monospace" font-size="10" fill="#64748b" letter-spacing="1">
+    Outbox · DLQ · NATS JetStream relay
+  </text>
+
+  <!-- Item 4: QUEUE WORKERS -->
+  <rect x="828" y="314" width="390" height="1" fill="rgba(0,243,255,0.15)"/>
+  <rect x="828" y="315" width="4" height="54" fill="#00f3ff" opacity="0.5"/>
+  <rect x="828" y="315" width="390" height="54" fill="rgba(0,243,255,0.03)" stroke="rgba(0,243,255,0.10)" stroke-width="1"/>
+  <text x="844" y="335" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="700"
+        fill="#00f3ff" opacity="0.8" letter-spacing="3">QUEUE WORKERS</text>
+  <text x="844" y="354" font-family="'Courier New', Courier, monospace" font-size="10" fill="#64748b" letter-spacing="1">
+    BullMQ · project lifecycle processing
+  </text>
+
+  <!-- Item 5: INFRA LAYER -->
+  <rect x="828" y="380" width="390" height="1" fill="rgba(0,243,255,0.15)"/>
+  <rect x="828" y="381" width="4" height="54" fill="#00f3ff" opacity="0.3"/>
+  <rect x="828" y="381" width="390" height="54" fill="rgba(0,243,255,0.02)" stroke="rgba(0,243,255,0.08)" stroke-width="1"/>
+  <text x="844" y="401" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="700"
+        fill="#94a3b8" letter-spacing="3">INFRA LAYER</text>
+  <text x="844" y="420" font-family="'Courier New', Courier, monospace" font-size="10" fill="#64748b" letter-spacing="1">
+    Docker Compose · Postgres · Redis · NATS
+  </text>
+
+  <!-- Top-right system ID -->
+  <text x="1218" y="90" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="700"
+        fill="#00f3ff" letter-spacing="2" text-anchor="end" opacity="0.5">SYS_ID: NF-001</text>
+
+  <!-- Hazard accent strip at left edge -->
+  <rect x="0" y="0" width="8" height="640" fill="url(#hazardStripe)" opacity="0.6"/>
+
+  <!-- Primary stripe at right edge -->
+  <rect x="1272" y="0" width="8" height="640" fill="url(#primaryStripe)" opacity="0.3"/>
+
+  <!-- Scanlines overlay -->
+  <rect width="1280" height="640" fill="url(#scanlines)" opacity="1"/>
+
+</svg>
